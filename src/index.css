@@ -1,13 +1,208 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f15094; 
+}
+
+.home-container {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f15094;
+  gap: 20px;
+}
+
+.home-image {
+  max-width: 100%; 
+  max-height: 50vh;
+  object-fit: contain;
+  min-width: 200px;
+}
+
+.home-text {
+  color: #204e73;
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+
+.home-button {
+  max-width: 100%;
+  background-color: #204e73;
+  color:#f15094; 
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.home-button:hover {
+  background-color: #5b0ba8;
+  color: white;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: #f15094;
+  text-align: center;
+}
+
+.form-elements {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #204e73;
+}
+
+.select-field {
+  width: 100%;
+  background-color: #204e73;
+  color: #f15094;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  /* outline evita que aparezca bordeado blanco luego de seleccion */
+  outline: none; 
+}
+
+.select-field:hover {
+  background-color: #5b0ba8;
+}
+
+.btn-play {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #204e73;
+  color: #f15094;
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-play:hover {
+  background-color: #5b0ba8;
+  color: white;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+  padding: 50px;
+  background-color: #f15094;
+  width: 100%;
+  /* min-height: 100vh; */
+}
+
+.game-question {
+  color: #204e73;
+  margin: 50px 0;
+  font-size: 2rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.game-answers{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+.game-answers li {
+  width: 100%;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.game-answers-button{
+  max-width: 100%;
+  background-color: #204e73;
+  color: #f15094;
+  padding: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  width: inherit;
+  transition: background-color 0.3s ease;
+}
+
+.game-answers-button.correct {
+  background-color: green;
+  transform: scale(1.05);
+}
+
+.game-answers-button.incorrect {
+  background-color: rgb(223, 38, 38); 
+  transform: scale(0.95);
+}
+
+
+.summary-elements {
+  width: 50%; 
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e68cb4;
+}
+
+
+@media (max-width: 768px) {
+  .home-text {
+    font-size: 1.2rem;
+  }
+
+  .home-button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .form-elements {
+    width: 100%;
+  }
+
+  .select-field {
+    padding: 15px;
+  }
+
+  .btn-play {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .game-question {
+    font-size: 1.5rem;
+  }
+
+  .home-image {
+    max-height: 30vh;
+  }
 }
