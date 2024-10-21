@@ -23,7 +23,7 @@ export default function Answers({
   }, [questions, indexQuestion, setSelectedAnswer]);
 
   return (
-    <div className="game-answers">
+    <div className={`game-answers ${timeUp ? "time-up" : ""}`}>
       <ul>
         {shuffledAnswers.map((answer, index) => {
           const classBtn = `game-answers-button ${

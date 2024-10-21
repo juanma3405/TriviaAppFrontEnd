@@ -30,8 +30,10 @@ export default function Question({
 
   return (
     <>
-      <div>Time Left: {timeLeft} seconds</div>
-      {timeUp && <div>Time's up! You didn't answer in time.</div>}
+      {!timeUp && (
+        <div className="timer-container">Time Left: {timeLeft} seconds</div>
+      )}
+      {timeUp && <div className="time-up-message">TIME'S UP!!</div>}
       <div className="game-question">{question}</div>
       <Answers
         changeQuestion={changeQuestion}

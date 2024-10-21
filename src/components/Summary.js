@@ -22,22 +22,37 @@ export default function Summary({ resetGame }) {
         <div className="row">
           <div className="col">
             {numberCorrectAnswers === 10 && (
-              <img src={winImg} className="home-image" alt="Winimage"></img>
+              <img
+                src={winImg}
+                className="home-image"
+                alt="Winimage"
+                loading="lazy"
+              ></img>
             )}
             {numberCorrectAnswers < 5 && (
-              <img src={loseImg} className="home-image" alt="Loseimage"></img>
+              <img
+                src={loseImg}
+                className="home-image"
+                alt="Loseimage"
+                loading="lazy"
+              ></img>
             )}
             {numberCorrectAnswers >= 5 && numberCorrectAnswers < 10 && (
-              <img src={passImg} className="home-image" alt="Passimage"></img>
+              <img
+                src={passImg}
+                className="home-image"
+                alt="Passimage"
+                loading="lazy"
+              ></img>
             )}
           </div>
           <div className="col">
-            <div className="home-text">
+            <div>
               <h1> YOUR SCORE </h1>
               <h2> {points} POINTS!</h2>
             </div>
-            <p className="home-text"> {numberCorrectAnswers} correct answers</p>
-            <p className="home-text"> {numberWrongAnswers} wrong answers</p>
+            <p> {numberCorrectAnswers} correct answers</p>
+            <p> {numberWrongAnswers} wrong answers</p>
             <button onClick={resetGame} className="btn-play">
               PLAY AGAIN
             </button>
