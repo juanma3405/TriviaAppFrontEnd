@@ -1,4 +1,5 @@
-const apiUrl = "https://localhost:7045/api/trivia/"; 
+//const apiUrl = "https://localhost:7045/api/trivia/"; // para ejecutar aplicacion local
+const apiUrl = "http://www.trivia-backend.somee.com"; //para ejecutar aplicacion desde hosting 
 class apiTriviaService {
 
   static async getCategories(){
