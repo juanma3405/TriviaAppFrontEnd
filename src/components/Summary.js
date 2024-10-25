@@ -1,11 +1,26 @@
 import { TriviaContext } from "../store/triviastore.js";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import winImg from "../assets/win-removebg-preview.png";
 import loseImg from "../assets/derrota-removebg-preview.png";
 import passImg from "../assets/aproved-removebg-preview.png";
 
+const preloadImages = (imageArray, setImagesLoaded) => {
+  let loadedImages = [];
+  imageArray.forEach((src, index) => {
+    const img = new Image();
+    img.src = src;
+    img.onload = () => {
+      loadedImages[index] = img.src;
+      if (loadedImages.length === imageArray.length) {
+        setImagesLoaded(loadedImages);
+      }
+    };
+  });
+};
+
 export default function Summary({ resetGame }) {
   const { questions, userAnswers } = useContext(TriviaContext);
+  const [imagesLoaded, setImagesLoaded] = useState([]);
 
   const correctAnswers = userAnswers.filter(
     (answer, index) => answer === questions[index].correct_Answer
@@ -16,49 +31,58 @@ export default function Summary({ resetGame }) {
   const numberCorrectAnswers = correctAnswers.length;
   const numberWrongAnswers = 10 - numberCorrectAnswers;
 
+  useEffect(() => {
+    const images = [winImg, loseImg, passImg];
+    preloadImages(images, setImagesLoaded);
+  }, []);
+
   return (
     <div className="home-container">
-      <div className="summary-elements">
-        <div className="row">
-          <div className="col">
-            {numberCorrectAnswers === 10 && (
-              <img
-                src={winImg}
-                className="home-image"
-                alt="Winimage"
-                loading="lazy"
-              ></img>
-            )}
-            {numberCorrectAnswers < 5 && (
-              <img
-                src={loseImg}
-                className="home-image"
-                alt="Loseimage"
-                loading="lazy"
-              ></img>
-            )}
-            {numberCorrectAnswers >= 5 && numberCorrectAnswers < 10 && (
-              <img
-                src={passImg}
-                className="home-image"
-                alt="Passimage"
-                loading="lazy"
-              ></img>
-            )}
-          </div>
-          <div className="col">
-            <div>
-              <h1> YOUR SCORE </h1>
-              <h2> {points} POINTS!</h2>
+      {imagesLoaded.length > 0 ? (
+        <div className="summary-elements">
+          <div className="row">
+            <div className="col">
+              {numberCorrectAnswers === 10 && (
+                <img
+                  src={imagesLoaded[0]}
+                  className="home-image"
+                  alt="Winimage"
+                  loading="lazy"
+                ></img>
+              )}
+              {numberCorrectAnswers < 5 && (
+                <img
+                  src={imagesLoaded[1]}
+                  className="home-image"
+                  alt="Loseimage"
+                  loading="lazy"
+                ></img>
+              )}
+              {numberCorrectAnswers >= 5 && numberCorrectAnswers < 10 && (
+                <img
+                  src={imagesLoaded[2]}
+                  className="home-image"
+                  alt="Passimage"
+                  loading="lazy"
+                ></img>
+              )}
             </div>
-            <p> {numberCorrectAnswers} correct answers</p>
-            <p> {numberWrongAnswers} wrong answers</p>
-            <button onClick={resetGame} className="btn-play">
-              PLAY AGAIN
-            </button>
+            <div className="col">
+              <div>
+                <h1> YOUR SCORE </h1>
+                <h2> {points} POINTS!</h2>
+              </div>
+              <p> {numberCorrectAnswers} correct answers</p>
+              <p> {numberWrongAnswers} wrong answers</p>
+              <button onClick={resetGame} className="btn-play">
+                PLAY AGAIN
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <p className="home-text">Waiting for results...</p>
+      )}
     </div>
   );
 }

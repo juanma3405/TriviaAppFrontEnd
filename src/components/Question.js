@@ -34,7 +34,10 @@ export default function Question({
         <div className="timer-container">Time Left: {timeLeft} seconds</div>
       )}
       {timeUp && <div className="time-up-message">TIME'S UP!!</div>}
-      <div className="game-question">{question}</div>
+      <div className="game-question">
+        <p className="home-text">{indexQuestion + 1}/10</p>
+        {question}
+      </div>
       <Answers
         changeQuestion={changeQuestion}
         timeUp={timeUp}

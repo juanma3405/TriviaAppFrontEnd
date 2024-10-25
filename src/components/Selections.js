@@ -25,6 +25,7 @@ export default function Selections() {
         return;
       }
       setQuestions(response);
+      console.log(response);
       navigate("/game");
     } catch (error) {
       setError(error.message);
