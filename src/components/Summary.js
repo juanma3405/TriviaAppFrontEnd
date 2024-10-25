@@ -5,6 +5,7 @@ import loseImg from "../assets/derrota-removebg-preview.png";
 import passImg from "../assets/aproved-removebg-preview.png";
 
 const preloadImages = (imageArray, setImagesLoaded) => {
+  debugger;
   let loadedImages = [];
   imageArray.forEach((src, index) => {
     const img = new Image();
@@ -47,7 +48,6 @@ export default function Summary({ resetGame }) {
                   src={imagesLoaded[0]}
                   className="home-image"
                   alt="Winimage"
-                  loading="lazy"
                 ></img>
               )}
               {numberCorrectAnswers < 5 && (
@@ -55,7 +55,6 @@ export default function Summary({ resetGame }) {
                   src={imagesLoaded[1]}
                   className="home-image"
                   alt="Loseimage"
-                  loading="lazy"
                 ></img>
               )}
               {numberCorrectAnswers >= 5 && numberCorrectAnswers < 10 && (
@@ -63,7 +62,6 @@ export default function Summary({ resetGame }) {
                   src={imagesLoaded[2]}
                   className="home-image"
                   alt="Passimage"
-                  loading="lazy"
                 ></img>
               )}
             </div>

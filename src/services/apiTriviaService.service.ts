@@ -1,4 +1,4 @@
-// const apiUrl = "https://localhost:7045/api/trivia/"; // para ejecutar aplicacion local
+//const apiUrl = "https://localhost:7045/api/trivia/"; // para ejecutar aplicacion local
 const apiUrl = "https://www.trivia-backend.somee.com/api/trivia/"; //para ejecutar aplicacion desde hosting 
 class apiTriviaService {
 
