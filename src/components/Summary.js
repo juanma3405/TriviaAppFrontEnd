@@ -5,7 +5,6 @@ import loseImg from "../assets/derrota-removebg-preview.png";
 import passImg from "../assets/aproved-removebg-preview.png";
 
 const preloadImages = (imageArray, setImagesLoaded) => {
-  debugger;
   let loadedImages = [];
   imageArray.forEach((src, index) => {
     const img = new Image();

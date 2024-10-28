@@ -10,7 +10,6 @@ export default function Question({
   setTimeUp,
   indexQuestion,
 }) {
-  debugger;
   const { questions } = useContext(TriviaContext);
   const question = questions[indexQuestion].question;
   const [selectedAnswer, setSelectedAnswer] = useState("");

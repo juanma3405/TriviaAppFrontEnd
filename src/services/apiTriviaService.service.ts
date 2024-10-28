@@ -1,5 +1,10 @@
+const apiUrl = process.env.NODE_ENV === 'production' 
+    ? process.env.REACT_APP_API_URL_PRODUCTION 
+    : process.env.REACT_APP_API_URL_LOCAL;
+
+
 //const apiUrl = "https://localhost:7045/api/trivia/"; // para ejecutar aplicacion local
-const apiUrl = "https://www.trivia-backend.somee.com/api/trivia/"; //para ejecutar aplicacion desde hosting 
+//const apiUrl = "https://www.trivia-backend.somee.com/api/trivia/"; //para ejecutar aplicacion desde hosting 
 class apiTriviaService {
 
   static async getCategories(){

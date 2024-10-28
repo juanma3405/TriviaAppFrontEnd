@@ -66,7 +66,7 @@ export default function Answers({
       {(selectedAnswer || timeUp) && (
         <div>
           <button
-            className="btn-play"
+            className="btn-play btn-continue-answers"
             onClick={() => changeQuestion(selectedAnswer || "")}
           >
             Continue
