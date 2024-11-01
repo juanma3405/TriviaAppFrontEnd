@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import apiTriviaService from "../services/apiTriviaService.service.ts";
 
 export default function Selections() {
+  debugger;
   const navigate = useNavigate();
   const { categories, setQuestions, error, setError, loadingCategories } =
     useContext(TriviaContext);

@@ -32,7 +32,7 @@ export default function Answers({
                 ? "correct"
                 : selectedAnswer === answer
                 ? "incorrect"
-                : ""
+                : "noselected"
               : ""
           }`;
           // esto es lo mismo que lo que sigue

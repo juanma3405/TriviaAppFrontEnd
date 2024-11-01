@@ -221,11 +221,17 @@ html {
 .game-answers-button.correct {
   background-color: green;
   transform: scale(1.05);
+  pointer-events: none;
 }
 
 .game-answers-button.incorrect {
   background-color: rgb(223, 38, 38); 
   transform: scale(0.95);
+  pointer-events: none;
+}
+
+.game-answers-button.noselected {
+  pointer-events: none;
 }
 
 .time-up .game-answers-button {
