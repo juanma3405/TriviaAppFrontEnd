@@ -18,7 +18,7 @@ export default function Home() {
     useContext(TriviaContext);
 
   const [imageLoaded, setImageLoaded] = useState(null);
-  const imageUrl = logoImg;
+  const imageSrc = logoImg;
 
   useEffect(() => {
     async function fetchCategories() {
@@ -36,8 +36,8 @@ export default function Home() {
   }, [setCategories, setError, setLoadingCategories]);
 
   useEffect(() => {
-    preloadImage(imageUrl, setImageLoaded);
-  }, [imageUrl]);
+    preloadImage(imageSrc, setImageLoaded);
+  }, [imageSrc]);
 
   const navigate = useNavigate();
 
