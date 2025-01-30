@@ -35,21 +35,6 @@ export default function Answers({
                 : "noselected"
               : ""
           }`;
-          // esto es lo mismo que lo que sigue
-          // let classBtn = "game-answers-button"; // Clase base para el botón
-          // if (selectedAnswer) {
-          //   // Si el usuario ya seleccionó una respuesta
-          //   if (answer === questions[indexQuestion].correct_Answer) {
-          //     // Si la respuesta actual es la correcta
-          //     classBtn = classBtn + " correct";
-          //   }
-          //   // Añadir clase "correct" si es correcta
-          //   else if (answer === selectedAnswer) {
-          //     // Si la respuesta actual es la seleccionada por el usuario y es incorrecta
-          //     classBtn = classBtn + " incorrect";
-          //   }
-          //   // Añadir clase "incorrect" si es la seleccionada y es incorrecta
-          // }
           return (
             <li key={index}>
               <button

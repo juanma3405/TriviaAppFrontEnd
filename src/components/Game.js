@@ -5,7 +5,6 @@ import Summary from "./Summary.js";
 import Question from "./Question.js";
 
 export default function Game() {
-  debugger;
   const navigate = useNavigate();
   const { questions, setQuestions, userAnswers, setUserAnswers, error } =
     useContext(TriviaContext);
