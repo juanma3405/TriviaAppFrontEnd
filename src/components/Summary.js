@@ -1,8 +1,8 @@
 import { TriviaContext } from "../store/triviastore.js";
 import { useContext, useEffect, useState } from "react";
-import winImg from "../assets/victoria.png";
-import loseImg from "../assets/derrota.png";
-import passImg from "../assets/aprobado.png";
+import victoryImg from "../assets/victoria.png";
+import defeatImg from "../assets/derrota.png";
+import approveImg from "../assets/aprobado.png";
 
 const preloadImages = (imageArray, setImagesLoaded) => {
   let loadedImages = [];
@@ -32,7 +32,7 @@ export default function Summary({ resetGame }) {
   const numberWrongAnswers = 10 - numberCorrectAnswers;
 
   useEffect(() => {
-    const images = [winImg, loseImg, passImg];
+    const images = [victoryImg, defeatImg, approveImg];
     preloadImages(images, setImagesLoaded);
   }, []);
 
