@@ -1,8 +1,8 @@
 import { TriviaContext } from "../store/triviastore.js";
 import { useContext, useEffect, useState } from "react";
-import winImg from "../assets/win-removebg-preview.png";
-import loseImg from "../assets/derrota-removebg-preview.png";
-import passImg from "../assets/aproved-removebg-preview.png";
+import winImg from "../assets/victoria.png";
+import loseImg from "../assets/derrota.png";
+import passImg from "../assets/aprobado.png";
 
 const preloadImages = (imageArray, setImagesLoaded) => {
   let loadedImages = [];
